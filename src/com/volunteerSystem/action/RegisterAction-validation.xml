@@ -1,0 +1,55 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<!--学号字段验证 -->
+	<field name="student.stuId">
+		<field-validator type="required">
+			<message key="请输入学号" />
+		</field-validator>
+	</field>
+	
+	<!--姓名字段验证 -->
+	<field name="student.stuName">
+		<field-validator type="requiredstring">
+			<message key="请输入姓名" />
+		</field-validator>
+	</field>
+	
+	<!--密码字段验证 -->
+	<field name="student.stuPwd">
+		<field-validator type="requiredstring">
+			<message key="请输入密码" />
+		</field-validator>
+	</field>
+	
+	<!--确认密码字段验证 -->
+	<field name="rePwd">
+		<field-validator type="fieldexpression">
+			<param name="expression">rePwd==student.stuPwd</param>
+			<message key="两次输入密码不一致"></message>
+		</field-validator>
+	</field>
+	
+	<!--性别字段验证 -->
+	<field name="student.stuSex">
+		<field-validator type="requiredstring">
+			<message key="请选择性别" />
+		</field-validator>
+	</field>
+	
+	<!--电话字段验证 -->
+	<field name="student.stuTel">
+		<field-validator type="requiredstring">
+			<message key="请输入电话号码" />
+		</field-validator>
+	</field>
+	
+	<!--QQ字段验证 -->
+	<field name="student.stuQq">
+		<field-validator type="requiredstring">
+			<message key="请输入QQ" />
+		</field-validator>
+	</field>
+</validators>

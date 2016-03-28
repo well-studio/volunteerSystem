@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="gb2312"></constant>
+	
+   <!-- <constant name="struts.objectFactory" value="spring"/>  -->
+	
+	<!-- user中的Action配置 -->
+	<package name="user" namespace="/user" extends="struts-default">
+		<action name="register" class="registerAction">
+			<result name="success">/success.jsp</result>
+			<result name="error">/user/register.jsp</result>
+			<result name="input">/user/register.jsp</result>
+		</action>
+		
+		<action name="login" class="loginAction" method="userLogin">
+			<result name="success">/index.jsp</result>
+			<result name="error">/user/login.jsp</result>
+			<result name="input">/user/login.jsp</result>
+		</action>
+		
+		
+	</package>
+	  
+	<!-- admin中的Action配置 -->
+	<package name="admin" namespace="/admin" extends="struts-default">
+		<action name="login" class="loginAction" method="adminLogin">
+			<result name="success">/main.jsp</result>
+			<result name="error">/admin/login.jsp</result>
+			<result name="input">/admin/login.jsp</result>
+		</action>
+		
+		<action name="upload" class="uploadAction" method="upload">
+			<result name="success">/main.jsp</result>
+			<result name="error">/admin/upload.jsp</result>
+			<result name="input">/admin/upload.jsp</result>
+		</action>
+		
+	</package>
+	<!-- 根中的Action配置 -->
+	<package name="root"  extends="struts-default">
+	
+		<action name="allActivity" class="allActivityAction">
+			<result name="success">/main.jsp</result>
+			<result name="error">/user/login.jsp</result>
+			<result name="input">/user/login.jsp</result>
+		</action>
+		
+	</package>
+</struts>
